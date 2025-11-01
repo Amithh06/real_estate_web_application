@@ -47,6 +47,12 @@
         flex-direction: column;
         gap: 20px;
 
+        span{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+
         button{
           width: 100px;
           background-color: teal;
@@ -55,11 +61,6 @@
           padding: 10px 20px;
           cursor: pointer;
           border-radius: 5px;
-        }
-        span{
-          display: flex;
-          align-items: center;
-          gap: 20px;
         }
 
         img{

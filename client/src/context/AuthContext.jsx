@@ -1,17 +1,10 @@
 import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
-const getUserFromLocalStorage = () => {
-  try {
-    const item =  localStorage.getItem("user");
-    return item ? JSON.parse(item) : null;
-  } catch (error) {
-    console.error("Failed to parse user from localStorage:", error);
-    return null;
-  }
-};
+
 export const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(getUserFromLocalStorage
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(localStorage.getItem("user")) || null
   );
 
   const updateUser = (data) => {
